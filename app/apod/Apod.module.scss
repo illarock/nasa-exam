@@ -1,0 +1,31 @@
+.apod {
+  @apply overflow-hidden;
+
+  .section {
+    @apply container mx-auto px-4 sm:grid sm:grid-cols-2 sm:min-h-screen;
+  }
+
+  h1 {
+    @apply text-2xl uppercase tracking-widest mb-8 leading-normal;
+  }
+
+  .left {
+    @apply p-5 bg-white sm:bg-transparent sm:p-0 sm:self-center sm:max-w-xl relative z-10;
+  }
+
+  .loader {
+    @apply animate-pulse flex items-center justify-center w-full h-[300px] sm:h-[600px] bg-gray-300 rounded  dark:bg-gray-700;
+
+    svg {
+      @apply w-10 h-10 text-gray-200 dark:text-gray-600;
+    }
+  }
+
+  .image {
+    @apply relative overflow-hidden rounded;
+
+    img {
+      @apply object-cover w-full h-[300px] sm:h-[600px];
+    }
+  }
+}

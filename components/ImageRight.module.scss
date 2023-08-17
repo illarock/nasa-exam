@@ -1,0 +1,11 @@
+.right {
+  @apply fixed right-0 bottom-0;
+
+  .moon {
+    @apply w-[400px] h-[400px] sm:w-[1150px] sm:h-[1150px] cursor-grab bg-[url('/images/moon.png')] opacity-50;
+  }
+
+  .austronaut {
+    @apply fixed right-0 bottom-0 max-w-xs lg:max-w-full;
+  }
+}

@@ -1,0 +1,9 @@
+.modal {
+  width: clamp(50%, 700px, 90%);
+
+  @apply overflow-hidden bg-white m-auto max-w-[800px];
+
+  img {
+    @apply w-full h-auto;
+  }
+}

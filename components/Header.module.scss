@@ -1,0 +1,49 @@
+.header {
+  @apply container mx-auto flex flex-wrap items-center justify-between font-normal p-4 fixed z-20 left-0 right-0 top-0;
+
+  @screen sm {
+    @apply px-4 pt-12 justify-start;
+  }
+
+  nav {
+    @screen sm {
+      @apply ml-16;
+    }
+
+    ul {
+      @apply flex;
+
+      li {
+        @apply ml-4;
+
+        @screen sm {
+          @apply ml-8;
+        }
+
+        a {
+          @apply transition-all hover:text-amber-500;
+
+          &.active {
+            @apply text-amber-500;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    @apply inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600;
+  }
+
+  svg {
+    @apply w-5 h-5;
+  }
+
+  img {
+    @apply transition-all w-[40px] h-[40px];
+
+    @screen sm {
+      @apply w-[60px] h-[60px];
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.home {
+  @apply overflow-hidden;
+
+  .section {
+    @apply container mx-auto px-4 sm:grid sm:grid-cols-2 min-h-screen;
+  }
+
+  h1 {
+    @apply text-xl sm:text-5xl uppercase tracking-widest mb-8 sm:leading-normal;
+  }
+
+  .left {
+    @apply p-4 rounded sm:p-0 bg-white sm:bg-transparent dark:bg-gray-700 self-center sm:max-w-xl relative z-10;
+  }
+}

@@ -1,0 +1,80 @@
+.mrp {
+  @apply overflow-hidden;
+
+  .section {
+    @apply container mx-auto px-4 py-10;
+  }
+
+  .lists {
+    @apply grid grid-cols-3 sm:grid-cols-6 gap-4 mt-5 mb-10;
+  }
+
+  h1 {
+    @apply text-xl sm:text-5xl uppercase tracking-widest sm:leading-normal;
+  }
+
+  p {
+    @apply mb-8;
+  }
+
+  input {
+    @apply rounded text-black dark:text-black py-2 px-4;
+  }
+
+  .date {
+    label {
+      @apply mr-4;
+    }
+  }
+
+  .no-items {
+    @apply w-full flex justify-center h-[400px] items-center;
+
+    h2 {
+      @apply text-sm sm:text-lg uppercase tracking-widest mb-8 sm:leading-normal;
+    }
+  }
+}
+
+.image {
+  @apply relative w-full pt-[100%] overflow-hidden rounded;
+
+  img {
+    @apply absolute inset-0 w-full h-full object-cover rounded cursor-pointer hover:opacity-50;
+  }
+}
+
+.pagination {
+  @apply flex flex-row flex-wrap gap-4 justify-center;
+
+  button {
+    @apply py-2 p-4 leading-normal rounded bg-black text-white dark:bg-white dark:text-black;
+
+    &.active {
+      @apply bg-amber-500;
+    }
+
+    &.prev,
+    &.next {
+      span {
+        @apply hidden sm:block;
+      }
+    }
+
+    &.prev {
+      @apply after:content-["<"] sm:after:content-none;
+    }
+
+    &.next {
+      @apply after:content-[">"] sm:after:content-none;
+    }
+  }
+}
+
+.loader {
+  @apply w-full flex justify-center h-[600px] items-center;
+
+  svg {
+    @apply animate-spin -ml-1 mr-3 h-5 w-5 text-amber-500 dark:text-white;
+  }
+}
