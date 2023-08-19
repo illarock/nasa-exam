@@ -1,4 +1,4 @@
-import { neosType } from "@/types/dateTypeVal";
+import { neosType } from "@/types/neoType";
 import styles from "./lists.module.scss";
 import Link from "next/link";
 

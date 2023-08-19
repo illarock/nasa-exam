@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Chart } from "chart.js";
-import { axiType } from "@/types/dateTypeVal";
+import { axiType } from "@/types/neoType";
 import styles from "./neo.module.scss";
 
 const LineChart = ({ axis, id }: { axis: axiType; id: string }) => {

@@ -1,5 +1,5 @@
 import { RootState } from "@/lib/store";
-import { axiType, neosType, neosdateType } from "@/types/dateTypeVal";
+import { axiType, neosType, neosdateType } from "@/types/neoType";
 import {
   createAsyncThunk,
   createSlice,
