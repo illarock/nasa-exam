@@ -44,7 +44,6 @@ export const getMarsRoverPhotos = createAsyncThunk(
 
   async (date: string | null | undefined) => {
     try {
-      console.log(date);
       const res = date
         ? await fetch(`/api/mrp?date=${date}`)
         : await fetch(`/api/mrp`);

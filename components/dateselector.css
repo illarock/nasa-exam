@@ -1,0 +1,15 @@
+.react-datepicker__input-container {
+  @apply max-w-[160px];
+}
+
+.date-range .react-datepicker__input-container {
+  @apply max-w-[300px];
+}
+
+.react-datepicker__navigation {
+  @apply top-[25px];
+}
+
+.react-datepicker__close-icon::after {
+  @apply text-base py-[2px] px-[10px] bg-red-400;
+}

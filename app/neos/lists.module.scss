@@ -1,0 +1,43 @@
+.lists {
+  @apply my-10;
+
+  .color {
+    @apply w-[30px] h-[30px] rounded-full;
+  }
+
+  .green {
+    @apply bg-green-500;
+  }
+
+  .orange {
+    @apply bg-orange-500;
+  }
+
+  .red {
+    @apply bg-red-500;
+  }
+
+  .table {
+    @apply table-auto border-collapse table-auto w-full;
+
+    th {
+      @apply border-b dark:border-slate-600 font-medium p-4 pl-8 pt-0 pb-3 text-slate-400 dark:text-slate-200 text-left;
+    }
+
+    tbody {
+      @apply bg-white dark:bg-slate-800;
+    }
+
+    td {
+      @apply border-b border-slate-100 dark:border-slate-700 p-4 pl-8 text-slate-500 dark:text-slate-400;
+    }
+  }
+
+  a {
+    @apply flex gap-2;
+
+    svg {
+      @apply h-6 w-6 text-green-700;
+    }
+  }
+}

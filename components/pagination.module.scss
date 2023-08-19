@@ -1,0 +1,26 @@
+.pagination {
+  @apply flex flex-row flex-wrap gap-4 justify-center;
+
+  button {
+    @apply py-2 p-4 leading-normal rounded bg-black text-white dark:bg-white dark:text-black;
+
+    &.active {
+      @apply bg-amber-500;
+    }
+
+    &.prev,
+    &.next {
+      span {
+        @apply hidden sm:block;
+      }
+    }
+
+    &.prev {
+      @apply after:content-["<"] sm:after:content-none;
+    }
+
+    &.next {
+      @apply after:content-[">"] sm:after:content-none;
+    }
+  }
+}

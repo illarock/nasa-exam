@@ -1,4 +1,4 @@
-import styles from "./mrp.module.scss";
+import styles from "./pagination.module.scss";
 
 const Pagination = ({
   totalPosts,

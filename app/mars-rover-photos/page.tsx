@@ -7,11 +7,12 @@ import {
   getMarsRoverPhotos,
   marsRoverPhotosState,
 } from "@/lib/slices/getMarsRoverPhotos";
-import Pagination from "./pagination";
-import ImageItem from "./imageItem";
+import Pagination from "@/components/pagination";
+import ImageItem from "./ImageItem";
 import { AnimatePresence } from "framer-motion";
 import Modal from "@/components/Modal";
-import DateSelector from "../../utils/dateSelector";
+import DateSelector from "../../components/dateSelector";
+import useDateCombined from "@/utils/useDateCombined";
 
 const MarsRoverPhotos = () => {
   const dispatch = useAppDispatch();
@@ -21,9 +22,10 @@ const MarsRoverPhotos = () => {
 
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [itemsPerPage, setItemsPerPage] = useState<number>(itemsPerPages);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState<string>("");
-  const [startDate, setStartDate] = useState(new Date(Date.UTC(2023, 0, 1)));
+  const [startDate, setStartDate] = useState<Date | null>(null);
 
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
@@ -46,21 +48,10 @@ const MarsRoverPhotos = () => {
     setCurrentImage(imageUrl);
   };
 
-  const dateHandler = (date: Date) => {
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-
-    let monthString = month.toString();
-    let dateString = day.toString();
-    let yearString = year.toString();
-
-    if (monthString.length < 2) monthString = "0" + monthString;
-    if (dateString.length < 2) dateString = "0" + dateString;
-
-    const dateCombined = `${yearString}-${monthString}-${dateString}`;
-
+  const DateHandler = (date: Date) => {
     setStartDate(date);
+    if (!date) return;
+    const dateCombined = useDateCombined(date);
     dispatch(getMarsRoverPhotos(dateCombined));
   };
 
@@ -71,7 +62,13 @@ const MarsRoverPhotos = () => {
         <p>On load dates are random</p>
         <div className={styles.date}>
           <label>Select Date:</label>
-          <DateSelector startDate={startDate} dateChange={dateHandler} />
+          <div className={styles.datepicker}>
+            <DateSelector
+              selDate={startDate}
+              dateChange={DateHandler}
+              placeholder="Choose Date"
+            />
+          </div>
         </div>
         {isLoading && (
           <div className={styles.loader}>
