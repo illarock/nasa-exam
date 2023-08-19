@@ -23,7 +23,6 @@ const DateSelector = ({
     <div>
       {!isDateRange && (
         <DatePicker
-          showIcon
           selected={selDate}
           onChange={(date: Date) => dateChange(date)}
           isClearable={true}
@@ -36,7 +35,6 @@ const DateSelector = ({
       {isDateRange && (
         <div className="date-range">
           <DatePicker
-            showIcon
             selectsRange={true}
             startDate={startDate}
             endDate={endDate}

@@ -2,6 +2,10 @@
   @apply max-w-[160px];
 }
 
+.react-datepicker__input-container input {
+  @apply border border-black dark:border-slate-600;
+}
+
 .date-range .react-datepicker__input-container {
   @apply max-w-[300px];
 }
